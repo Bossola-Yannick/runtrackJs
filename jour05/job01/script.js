@@ -59,42 +59,29 @@ $("document").ready(function () {
 
 $("#connexion").submit(function (e) {
   e.preventDefault();
-  let formData = $(this).serializeArray();
-  let mail = formData[0].value;
-  let password = formData[1].value;
   if (verifMail) {
-    if (password == "") {
+    if (!$("#password").val()) {
       $("#connexionMessage")
         .text("Mot de passe non renseigné !")
         .css("color", "red");
     } else
       $("#connexionMessage").text("Connexion Réussi !").css("color", "green");
-    console.log(mail);
-    console.log(password);
   } else $("#connexionMessage").text("Connexion Echoué !").css("color", "red");
 });
 
 $("#inscription").submit(function (e) {
   e.preventDefault();
-  let formData = $(this).serializeArray();
-  let nom = formData[0].value;
-  let prenom = formData[1].value;
-  let email = formData[2].value;
-  let adresse = formData[3].value;
-  let codeP = formData[4].value;
-  let password = formData[5].value;
-  let verifPassword = formData[6].value;
   if (
-    nom == "" ||
-    prenom == "" ||
-    email == "" ||
-    adresse == "" ||
-    codeP == "" ||
-    password == "" ||
-    verifPassword == ""
+    !$("#nom").val() ||
+    !$("#prenom").val() ||
+    !$("#email").val() ||
+    !$("#adresse").val() ||
+    !$("#codeP").val() ||
+    !$("#password").val() ||
+    !$("#confirmPassword").val()
   ) {
     $("#statusInscription")
-      .text("Veuillez remplir tous les champs !")
+      .text("Veuillez remplir tous les champs CORRECTEMENT!")
       .css("color", "red");
     return;
   }

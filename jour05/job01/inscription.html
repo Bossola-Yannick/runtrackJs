@@ -20,22 +20,22 @@
     <form action="" id="inscription">
       <h2 id="statusInscription"></h2>
       <label for="nom">Nom</label>
-      <input type="text" name="nom" id="nom" />
+      <input type="text" name="nom" id="nom" required />
       <label for="prenom">Prénom</label>
-      <input type="text" name="prenom" id="prenom" />
+      <input type="text" name="prenom" id="prenom" required />
       <label for="email">Email</label>
-      <input type="email" name="mail" id="email" />
+      <input type="email" name="mail" id="email" required />
       <span id="emailError"></span>
       <label for="adresse">Adresse</label>
-      <input type="text" name="adresse" id="adresse" />
+      <input type="text" name="adresse" id="adresse" required />
       <label for="codeP">Code Postale</label>
-      <input type="text" name="codeP" id="codeP" />
+      <input type="number" name="codeP" id="codeP" required />
       <span id="codePostalError"></span>
       <label for="password">Mot de Passe</label>
-      <input type="password" name="password" id="password" />
+      <input type="password" name="password" id="password" required />
       <span id="passwordError"></span>
       <label for="confirmPassword">Confirmtion Mot de Passe</label>
-      <input type="password" name="password" id="confirmPassword" />
+      <input type="password" name="password" id="confirmPassword" required />
       <span id="identiquePasswordError"></span>
       <button type="submit">Valider</button>
     </form>
