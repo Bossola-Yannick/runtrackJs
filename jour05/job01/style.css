@@ -1,0 +1,31 @@
+.header {
+  height: 3rem;
+  display: flex;
+  justify-content: end;
+  gap: 3rem;
+  width: 80%;
+  background-color: green;
+  border-radius: 3rem;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem 1.2rem 0;
+  margin-bottom: 3rem;
+}
+
+.connexion,
+.inscription {
+  background-color: blue;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#connexion,
+#inscription {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+  gap: 1rem;
+}
