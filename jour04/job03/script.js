@@ -45,6 +45,16 @@ const search = async (id, name, type) => {
     if (data) {
       for (const pokemon of data) {
         if (
+          id == pokemon.id &&
+          name == pokemon.name.french &&
+          pokemon.type.includes(type)
+        ) {
+          let name = $("<h2></h2>").text(pokemon.name.french);
+          let type = $("<h3></h3>").text(pokemon.type);
+          let id = $("<p></p>").text(pokemon.id);
+          $("body").append(name, type, id);
+          console.log(pokemon);
+        } else if (
           id == pokemon.id ||
           name == pokemon.name.french ||
           pokemon.type.includes(type)
