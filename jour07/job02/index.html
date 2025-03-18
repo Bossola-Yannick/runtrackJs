@@ -1,0 +1,131 @@
+<!-- Sans utiliser de fichier css, ajouter des classes materialize à votre
+header de sorte qu'il soit coloré et aligné. -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Index2</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="teal darken-3">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo left">Logo</a>
+          <ul id="" class="right">
+            <li class="active"><a href="./index.html">Accueil</a></li>
+            <li><a href="./index.html">Inscription</a></li>
+            <li><a href="./index.html">Connexion</a></li>
+            <li><a href="./index.html">Rechercher</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="row center">
+        <div class="col s10 offset-s4">
+          <form action="">
+            <!-- input radio civilité -->
+            <div class="row">
+              <div class="col s5">
+                <label>
+                  <input name="civilite" type="radio" value="Mr" />
+                  <span>Mr</span>
+                </label>
+                <label>
+                  <input name="civilite" type="radio" value="Mme" />
+                  <span>Mme</span>
+                </label>
+              </div>
+            </div>
+            <!-- input texte Nom, Prénom, Adresse -->
+            <div class="row">
+              <div class="col s5">
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="Nom"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s5">
+                <label for="lastname">Prénom</label>
+                <input type="text" name="lastname" id="lastname" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s5">
+                <label for="adress">Adresse</label>
+                <input type="text" name="adress" id="adress" />
+              </div>
+            </div>
+            <!-- input mail  -->
+            <div class="row">
+              <div class="col s5">
+                <label for="email">Adresse Mail</label>
+                <input type="email" name="email" id="email" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s5">
+                <label for="password">Mot de Passe</label>
+                <input type="password" name="password" id="password" />
+              </div>
+            </div>
+            <div class="row center">
+              <div class="col s5">
+                <label for="verifPassword"> Validation Mot de Passe</label>
+                <input
+                  type="password"
+                  name="verifPassword"
+                  id="verifPassword"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s5">
+                <button type="submit">Valider</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="page-footer teal darken-3">
+      <div class="row center">
+        <div class="col s3">
+          <a href="index.html" class="white-text">Accueil</a>
+        </div>
+        <div class="col s3">
+          <a href="index.html" class="white-text">Inscription</a>
+        </div>
+        <div class="col s3">
+          <a href="index.html" class="white-text">Connexion</a>
+        </div>
+        <div class="col s3">
+          <a href="index.html" class="white-text">Recherche</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">© 2014 BY Orkblan</div>
+      </div>
+    </footer>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
