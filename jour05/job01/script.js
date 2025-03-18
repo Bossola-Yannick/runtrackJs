@@ -59,10 +59,14 @@ $("document").ready(function () {
 
 $("#connexion").submit(function (e) {
   e.preventDefault();
+  // récupération des valeurs du formulaire et traitement
+  let email = $("#email").val().trim();
+  let password = $("#password").val().trim();
+
   if (verifMail) {
-    if (!$("#password").val()) {
+    if (!password || !email) {
       $("#connexionMessage")
-        .text("Mot de passe non renseigné !")
+        .text("Mot de passe ou Email non renseigné !")
         .css("color", "red");
     } else
       $("#connexionMessage").text("Connexion Réussi !").css("color", "green");
@@ -71,14 +75,22 @@ $("#connexion").submit(function (e) {
 
 $("#inscription").submit(function (e) {
   e.preventDefault();
+  // récupération des valeurs du formulaire et traitement
+  let nom = $("#nom").val().trim();
+  let prenom = $("#prenom").val().trim();
+  let email = $("#email").val().trim();
+  let adresse = $("#adresse").val().trim();
+  let codeP = $("#codeP").val().trim();
+  let password = $("#password").val().trim();
+  let confirmPassword = $("#confirmPassword").val().trim();
   if (
-    !$("#nom").val() ||
-    !$("#prenom").val() ||
-    !$("#email").val() ||
-    !$("#adresse").val() ||
-    !$("#codeP").val() ||
-    !$("#password").val() ||
-    !$("#confirmPassword").val()
+    !nom ||
+    !prenom ||
+    !email ||
+    !adresse ||
+    !codeP ||
+    !password ||
+    !confirmPassword
   ) {
     $("#statusInscription")
       .text("Veuillez remplir tous les champs CORRECTEMENT!")
@@ -87,7 +99,7 @@ $("#inscription").submit(function (e) {
   }
   if (passwordIdentique) {
     $("#statusInscription").text("Inscription Validée !").css("color", "green");
-    return;
+    console.log(nom, prenom, email, adresse, codeP, password, confirmPassword);
   }
 });
 
