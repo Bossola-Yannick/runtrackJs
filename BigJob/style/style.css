@@ -1,0 +1,9 @@
+main {
+  min-height: 90vh;
+}
+footer {
+  height: 3rem;
+}
+footer h6 {
+  padding: 1rem;
+}
