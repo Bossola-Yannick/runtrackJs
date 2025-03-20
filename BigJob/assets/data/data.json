@@ -1,0 +1,26 @@
+  [
+    {
+      "nom": "Prof",
+      "prenom": "William",
+      "email": "william@example.com",
+      "code_postal": "13700",
+      "mot_de_passe": "Azer*1",
+      "role": "admin"
+    },
+    {
+      "nom": "Bossola",
+      "prenom": "Yannick",
+      "email": "thomas.morel@example.com",
+      "code_postal": "13008",
+      "mot_de_passe": "Azer*1",
+      "role": "student"
+    },
+    {
+      "nom": "Sanchez",
+      "prenom": "James",
+      "email": "james@example.com",
+      "code_postal": "13015",
+      "mot_de_passe": "Azer*1",
+      "role": "student"
+    }
+  ]

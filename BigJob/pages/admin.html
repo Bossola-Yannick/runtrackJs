@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Big-Job</title>
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="../style/reset.css" />
+    <link rel="stylesheet" href="../style/style.css" />
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -18,22 +19,28 @@
       <nav class="navbar bg-secondary">
         <div class="container-fluid justify-content-around">
           <span class="navbar-brand mb-0 h1">LPTF</span>
-          <a class="navbar-brand text-dark fs-6 pt-3 pb-3" href="./index.html"
+          <a class="navbar-brand text-dark fs-6 pt-3 pb-3" href="../index.html"
             >Acceuil</a
           >
           <a
             class="navbar-brand text-dark fs-6 pt-3 pb-3"
-            href="./pages/connexion.html"
+            href="./connexion.html"
             >Connexion</a
           >
           <a
             class="navbar-brand text-dark fs-6 pt-3 pb-3"
-            href="./pages/inscription.html"
+            href="./inscription.html"
             >Inscription</a
           >
         </div>
       </nav>
     </header>
+    <main class="row align-items-center mx-0">
+      <div id="calendar"></div>
+    </main>
+    <footer class="bg-secondary text-center p-4">
+      <h6>&#169; BY Orkblan</h6>
+    </footer>
     <!--Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -41,6 +48,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Mon JS -->
-    <script src="./js/script.js"></script>
+    <script src="../js/calendar.js" defer></script>
+    <script src="../js/students.js" defer></script>
   </body>
 </html>
