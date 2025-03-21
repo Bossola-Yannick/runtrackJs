@@ -1,5 +1,5 @@
-let verifMail = false;
-let passwordIdentique = false;
+export let verifMail = false;
+export let passwordIdentique = false;
 
 $("document").ready(function () {
   const regexMail = new RegExp(

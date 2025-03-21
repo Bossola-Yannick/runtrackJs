@@ -7,7 +7,6 @@ function createcalendar(month, year) {
 
   let date = 1;
   const daysInMonth = getDaysInMonth(month + 1, year);
-
   for (let i = 0; i < 6; i++) {
     let week = document.createElement("tr");
 
@@ -30,4 +29,5 @@ function createcalendar(month, year) {
 }
 
 const currentDate = new Date();
+
 createcalendar(currentDate.getMonth(), currentDate.getFullYear());

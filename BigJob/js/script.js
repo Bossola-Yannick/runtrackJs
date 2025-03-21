@@ -1,7 +1,7 @@
-let user;
-async function fetchUser() {
+export let user;
+export async function fetchUser() {
   try {
-    let response = await fetch("../assets/data/data.json");
+    let response = await fetch("./assets/data/data.json");
     if (!response.ok) {
       throw new Error("Erreur chemin !");
     }
@@ -12,15 +12,26 @@ async function fetchUser() {
   }
 }
 // Fonction pour récupérer et assigner les données à `user`
-async function getAllUser() {
+export async function getAllUser() {
   user = await fetchUser();
   if (user) {
-    console.log(user);
+    return user;
   } else {
     console.log("Aucune donnée reçue.");
   }
 }
-getAllUser();
-console.log(user);
 
-//fonction pour savoir si utilisateur enregistré
+// mise en localStorage de mes Data Utilisateur
+let getAllUserList;
+// Charger les utilisateurs existants
+if (!localStorage.getItem("users")) {
+  getAllUser().then((data) => {
+    if (data) {
+      let getAllUserList = data; // Assigner les données utilisateur
+      console.log("Utilisateurs chargés :", getAllUserList);
+      localStorage.setItem("users", JSON.stringify(getAllUserList));
+    } else {
+      console.log("pas de données");
+    }
+  });
+} else getAllUserList = JSON.parse(localStorage.getItem("users"));
