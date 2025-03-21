@@ -34,7 +34,7 @@ $("#inscription").submit(function (e) {
     };
     console.log("Nouvel utilisateur :", newUser);
 
-    //mise a jour de la liste utilisateru
+    //mise a jour de la liste utilisateur
     getAllUserList.push(newUser);
     // Mettre à jour LocalStorage
     localStorage.setItem("users", JSON.stringify(getAllUserList));

@@ -4,6 +4,9 @@ body {
 main {
   min-height: 83.8vh;
 }
-td {
+.tableStyle {
   padding: 0.5rem;
+  font-weight: 600;
+  border: 1px solid black;
+  cursor: pointer;
 }

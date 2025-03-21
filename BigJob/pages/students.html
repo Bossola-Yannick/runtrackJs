@@ -29,21 +29,44 @@
           >
           <a
             class="navbar-brand text-dark fs-6 pt-3 pb-3"
-            href="./connexion.html"
-            >Connexion</a
+            href="./inscription.html"
+            >Inscription</a
           >
           <a
             class="navbar-brand text-dark fs-6 pt-3 pb-3"
-            href="./inscription.html"
-            >Inscription</a
+            href="./connexion.html"
+            id="linkConnexion"
+            >Connexion</a
           >
         </div>
       </nav>
     </header>
     <main class="row align-items-center mx-0">
-      <h1>STUDENTS PAGE</h1>
-      <div id="calendar"></div>
-      <div id="dateSelected"></div>
+      <h1 class="text-center">STUDENTS PAGE</h1>
+      <p id="info" class="text-center fs-4">
+        Veuillez choisir la ou les dates auquels vous souhaitez être inscrit !
+      </p>
+      <div class="container-fluid row m-0 p-0 justify-content-center">
+        <div id="containCalandar" class="col-3">
+          <h3 id="month"></h3>
+          <div id="calendar" class="text-center"></div>
+        </div>
+        <div id="dateSelected" class="col-3">
+          <h3 id="listSelected">Vous avez sélectionné :</h3>
+          <div class="container">
+            <div id="listDatesSelected" class="row"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button
+          type="submit"
+          class="btn btn-outline-success col-2 p-2 fs-4"
+          id="valid"
+        >
+          Valider
+        </button>
+      </div>
     </main>
     <footer class="bg-secondary text-center p-4">
       <h6>&#169; BY Orkblan</h6>
@@ -55,7 +78,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Mon JS -->
-    <script src="../js/calendar.js" defer></script>
+    <script src="../js/logout.js" defer></script>
     <script src="../js/students.js" defer></script>
   </body>
 </html>

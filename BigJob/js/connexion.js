@@ -7,6 +7,8 @@ $("#connexion").submit(function (e) {
   // récupération des valeurs du formulaire et traitement
   let email = $("#email").val().trim();
   let password = $("#password").val().trim();
+  console.log(email);
+  console.log(password);
 
   if (verifMail) {
     if (!password || !email) {
@@ -18,6 +20,8 @@ $("#connexion").submit(function (e) {
       let user = getAllUserList.find(
         (u) => u.email === email && u.mot_de_passe === password
       );
+      localStorage.setItem("userConnect", user.nom);
+      console.log(localStorage.getItem("userConnect"));
 
       if (user) {
         role = user.role;
