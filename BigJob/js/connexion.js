@@ -1,7 +1,7 @@
 import { verifMail } from "./verifInput.js";
 let role;
 // récupération de la liste des utilisateur dans le local Storage
-let getAllUserList = JSON.parse(localStorage.getItem("users")) || [];
+let getAllUserList = JSON.parse(sessionStorage.getItem("users")) || [];
 $("#connexion").submit(function (e) {
   e.preventDefault();
   // récupération des valeurs du formulaire et traitement
@@ -20,8 +20,11 @@ $("#connexion").submit(function (e) {
       let user = getAllUserList.find(
         (u) => u.email === email && u.mot_de_passe === password
       );
-      localStorage.setItem("userConnect", user.nom);
-      console.log(localStorage.getItem("userConnect"));
+      sessionStorage.setItem(
+        "userConnect",
+        JSON.stringify({ nom: user.nom, role: user.role })
+      );
+      console.log(sessionStorage.getItem("userConnect"));
 
       if (user) {
         role = user.role;

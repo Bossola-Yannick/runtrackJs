@@ -1,5 +1,6 @@
 import { passwordIdentique } from "./verifInput.js";
-let getAllUserList = JSON.parse(localStorage.getItem("users"));
+let getAllUserList = JSON.parse(sessionStorage.getItem("users"));
+console.log(getAllUserList);
 
 $("#inscription").submit(function (e) {
   e.preventDefault();
@@ -36,8 +37,8 @@ $("#inscription").submit(function (e) {
 
     //mise a jour de la liste utilisateur
     getAllUserList.push(newUser);
-    // Mettre à jour LocalStorage
-    localStorage.setItem("users", JSON.stringify(getAllUserList));
+    // Mettre à jour sessionStorage
+    sessionStorage.setItem("users", JSON.stringify(getAllUserList));
     document.location.href = "./connexion.html";
   }
 });

@@ -21,17 +21,17 @@ export async function getAllUser() {
   }
 }
 
-// mise en localStorage de mes Data Utilisateur
+// mise en sessionStorage de mes Data Utilisateur
 let getAllUserList;
 // Charger les utilisateurs existants
-if (!localStorage.getItem("users")) {
+if (!sessionStorage.getItem("users")) {
   getAllUser().then((data) => {
     if (data) {
       let getAllUserList = data; // Assigner les données utilisateur
       console.log("Utilisateurs chargés :", getAllUserList);
-      localStorage.setItem("users", JSON.stringify(getAllUserList));
+      sessionStorage.setItem("users", JSON.stringify(getAllUserList));
     } else {
       console.log("pas de données");
     }
   });
-} else getAllUserList = JSON.parse(localStorage.getItem("users"));
+} else getAllUserList = JSON.parse(sessionStorage.getItem("users"));

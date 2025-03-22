@@ -21,6 +21,8 @@ const dayName = [
   "Samedi",
   "Dimanche",
 ];
+let userConnect = JSON.parse(sessionStorage.getItem("userConnect"));
+$("#name").text(userConnect.nom);
 function getDaysInMonth(month, year) {
   return new Date(year, month, 0).getDate();
 }
@@ -95,24 +97,23 @@ $("#calendar").click(function (e) {
 });
 
 $("#valid").click(function () {
-  // Récupérer les données du localStorage
-  let userConnect = localStorage.getItem("userConnect");
-  console.log(userConnect);
+  // Récupérer les données du sessionStorage
+  let userConnect = JSON.parse(sessionStorage.getItem("userConnect"));
   // Récupération des données dans users
-  let users = JSON.parse(localStorage.getItem("users"));
+  let users = JSON.parse(sessionStorage.getItem("users"));
   // Vérifier si les données existent
   if (users && Array.isArray(users)) {
     // Trouver l'utilisateur
-    let connectUser = users.find((user) => user.nom === userConnect);
+    let connectUser = users.find((user) => user.nom === userConnect.nom);
     if (connectUser) {
       // Ajout des dates
       connectUser.date = dates;
-      // Réenregistrer les données dans le localStorage
-      localStorage.setItem("users", JSON.stringify(users));
+      // Réenregistrer les données dans le sessionStorage
+      sessionStorage.setItem("users", JSON.stringify(users));
     } else {
       console.log("Utilisateur non trouvé.");
     }
   } else {
-    console.log("Aucune donnée trouvée dans le localStorage.");
+    console.log("Aucune donnée trouvée dans le sessionStorage.");
   }
 });

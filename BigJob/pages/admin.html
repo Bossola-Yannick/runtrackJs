@@ -13,6 +13,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Jquery -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      defer
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -24,11 +29,6 @@
           >
           <a
             class="navbar-brand text-dark fs-6 pt-3 pb-3"
-            href="./inscription.html"
-            >Inscription</a
-          >
-          <a
-            class="navbar-brand text-dark fs-6 pt-3 pb-3"
             href="./connexion.html"
             id="linkConnexion"
             >Connexion</a
@@ -37,8 +37,25 @@
       </nav>
     </header>
     <main class="row align-items-center mx-0">
-      <h1>ADMIN PAGE</h1>
-      <div id="calendar"></div>
+      <h1 class="text-center m-0">ADMIN PAGE</h1>
+      <h3 class="text-center m-0">
+        Bonjour <span id="name" class="fw-bold"></span>
+      </h3>
+      <div id="containerStudents" class="container">
+        <div class="card">
+          <div class="card-body row">
+            <h5 class="card-title col-2 fs-4 fw-bold">Nom</h5>
+            <h5 class="card-title col-2 fs-4 fw-bold">Prénom</h5>
+            <p class="card-text col-2 fs-4 fw-bold">Role</p>
+            <p class="card-text col-3 fs-4 fw-bold">
+              Requête pour une absence ce mois-ci :
+            </p>
+            <p class="card-text col-3 fs-4 fw-bold text-end">
+              Gestion des droits :
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="bg-secondary text-center p-4">
       <h6>&#169; BY Orkblan</h6>
@@ -50,7 +67,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Mon JS -->
-    <script src="../js/logout.js" type="module" defer></script>
-    <script src="../js/students.js" defer></script>
+    <script src="../js/user-connected.js" type="module" defer></script>
+    <script src="../js/admin.js" defer></script>
   </body>
 </html>
