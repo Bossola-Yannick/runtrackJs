@@ -1,17 +1,17 @@
 export let verifMail = false;
 export let passwordIdentique = false;
+export const regexMail = new RegExp(
+  // "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,5}$"
+  "^[a-zA-Z0-9._%+-]+@laplateforme\\.io$"
+);
+// regex pour password: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$
+const regexPassword = new RegExp(
+  "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{5,}$"
+);
+const regexCodeP = new RegExp("^\\d{5}$");
 
 $("document").ready(function () {
-  const regexMail = new RegExp(
-    "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,5}$"
-  );
-  // regex pour password: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$
-  const regexPassword = new RegExp(
-    "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{5,}$"
-  );
-  const regexCodeP = new RegExp("^\\d{5}$");
-
-  // verif format email
+  // verif format email en temp réel
   $("#email").on("input", function () {
     let mail = $(this).val();
     if (regexMail.test(mail)) {

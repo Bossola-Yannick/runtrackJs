@@ -21,7 +21,6 @@ $("#connexion").submit(function (e) {
   let user = getAllUserList.find(
     (u) => u.email === email && u.mot_de_passe === password
   );
-  console.log(user);
 
   // vérification si utilisateur dans la base de donnée
   if (!user) {

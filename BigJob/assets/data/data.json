@@ -2,7 +2,7 @@
     {
       "nom": "Dark",
       "prenom": "Vador",
-      "email": "vador@example.com",
+      "email": "vador@laplateforme.io",
       "code_postal": "13666",
       "mot_de_passe": "Aze*1",
       "role": "super-admin"
@@ -10,7 +10,7 @@
     {
       "nom": "Skywalker",
       "prenom": "Luke",
-      "email": "skywalker@example.com",
+      "email": "skywalker@laplateforme.io",
       "code_postal": "13700",
       "mot_de_passe": "Aze*1",
       "role": "admin"
@@ -18,7 +18,7 @@
     {
       "nom": "Bossola",
       "prenom": "Yannick",
-      "email": "bossola@example.com",
+      "email": "bossola@laplateforme.io",
       "code_postal": "13008",
       "mot_de_passe": "Aze*1",
       "role": "student"
@@ -26,7 +26,7 @@
     {
       "nom": "Prince",
       "prenom": "Végéta",
-      "email": "prince@example.com",
+      "email": "prince@laplateforme.io",
       "code_postal": "13015",
       "mot_de_passe": "Aze*1",
       "role": "student"

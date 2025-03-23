@@ -1,6 +1,6 @@
 import { passwordIdentique } from "./verifInput.js";
+import { regexMail } from "./verifInput.js";
 let getAllUserList = JSON.parse(sessionStorage.getItem("users"));
-console.log(getAllUserList);
 
 $("#inscription").submit(function (e) {
   e.preventDefault();
@@ -18,13 +18,32 @@ $("#inscription").submit(function (e) {
   if (!nom || !prenom || !email || !codeP || !password || !confirmPassword) {
     $("#statusInscription")
       .text("Veuillez remplir tous les champs CORRECTEMENT!")
-      .css("color", "red");
+      .css("color", "red")
+      .attr({ class: "text-center" });
+    return;
+  }
+  // vérification de l'adresse mail
+  if (!regexMail.test(email)) {
+    $("#statusInscription")
+      .text("Veuilez vous inscrire avec l'adresse mail de la plateforme !")
+      .css("color", "red")
+      .attr({ class: "text-center" });
+    return;
+  }
+  // verification si utilisateur déjà présent (adresse mail unique)
+  let user = getAllUserList.find((u) => u.email === email);
+  if (user) {
+    $("#statusInscription")
+      .text(
+        "Vous avez déjà un compte, si vous avez oublié le mot de passe rapprochez vous de votre accompagnateur !"
+      )
+      .css("color", "red")
+      .attr({ class: "text-center" });
     return;
   }
 
   // Vérification des mots de passe
   if (passwordIdentique) {
-    $("#statusInscription").text("Inscription Validée !").css("color", "green");
     let newUser = {
       nom: nom,
       email: email,
@@ -33,8 +52,6 @@ $("#inscription").submit(function (e) {
       mot_de_passe: password,
       role: role,
     };
-    console.log("Nouvel utilisateur :", newUser);
-
     //mise a jour de la liste utilisateur
     getAllUserList.push(newUser);
     // Mettre à jour sessionStorage
@@ -42,5 +59,3 @@ $("#inscription").submit(function (e) {
     document.location.href = "./connexion.html";
   }
 });
-
-//^[a-zA-Z0-9._%+-]+@laplateforme\.io$
