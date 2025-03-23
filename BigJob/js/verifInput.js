@@ -10,6 +10,7 @@ $("document").ready(function () {
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{5,}$"
   );
   const regexCodeP = new RegExp("^\\d{5}$");
+
   // verif format email
   $("#email").on("input", function () {
     let mail = $(this).val();

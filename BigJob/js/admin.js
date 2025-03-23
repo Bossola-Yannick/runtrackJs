@@ -21,27 +21,27 @@ for (student of studentsList) {
   });
   let cardTitle = $("<h4></h4>")
     .text(student.nom)
-    .attr({ class: "card-title col-1" });
+    .attr({ class: "card-title col-xl-1 row-sm" });
   let cardSubTitle = $("<h5></h5>")
     .text(student.prenom)
-    .attr({ class: "card-title col-1" });
+    .attr({ class: "card-title col-xl-1" });
   let cardRole = $("<p></p>")
     .text(student.role)
-    .attr({ class: "card-title col-1" });
+    .attr({ class: "card-title col-xl-1" });
   let cardDate = $("<p></p>")
     .text(student.date)
-    .attr({ class: "card-title col-4" });
+    .attr({ class: "card-title col-xl-4" });
   let btnValDate = $("<button></button>").text("Valider").attr({
-    class: "btn btn-success col-2 text-end btnValDate",
+    class: "btn btn-success col-xl-2 text-end btnValDate",
     type: "submit",
     value: student.nom,
   });
   let btnDelDate = $("<button></button>").text("Supprimer").attr({
-    class: "btn btn-warning col-2 text-end btnDelDate",
+    class: "btn btn-warning col-xl-2 text-end btnDelDate",
     type: "submit",
     value: student.nom,
   });
-  let grpButton = $("<div></div>").attr({ role: "group", class: "col-2" });
+  let grpButton = $("<div></div>").attr({ role: "group", class: "col-xl-2" });
 
   let btnAdmin = $("<button></button>").text("Admin").attr({
     class: "btn btn-warning text-end btnAdmin",
@@ -55,7 +55,7 @@ for (student of studentsList) {
   });
 
   let btnDelete = $("<button></button>").text("Supprimer").attr({
-    class: "btn btn-danger col-1 text-end btnDelete",
+    class: "btn btn-danger col-xl-1 col-sm-3 text-end btnDelete",
     type: "submit",
     value: student.nom,
   });

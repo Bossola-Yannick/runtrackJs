@@ -25,7 +25,29 @@ let userConnect = JSON.parse(sessionStorage.getItem("userConnect"));
 if (!userConnect) {
   document.location.href = "./404.html";
 }
+let users = JSON.parse(sessionStorage.getItem("users"));
+let connectUser = users.find((user) => user.nom === userConnect.nom);
+
+// si une sélection de date existe déjà
+if (connectUser.date) {
+  let request = $(
+    '<p class="col-1 selection fs-4 fw-bold text-primary"></p>'
+  ).text(connectUser.date.sort());
+  $("#requestedList").append(request);
+}
+
+// si des date sont validées
+if (connectUser.validDate) {
+  let request = $(
+    '<p class="col-1 selection fs-4 fw-bold text-success"></p>'
+  ).text(connectUser.validDate.sort());
+  $("#validDate").append(request);
+}
+
+// récupération du nom de l'utilisateur connecté
 $("#name").text(userConnect.nom);
+
+// fonctions de mise en place du calendrier
 function getDaysInMonth(month, year) {
   return new Date(year, month, 0).getDate();
 }
@@ -58,9 +80,13 @@ function createcalendar(month, year) {
   }
 }
 
+// gestion de la sélection des dates
 const currentDate = new Date();
+console.log(currentDate);
+
 let month = currentDate.getMonth();
 let day = currentDate.getDate();
+
 $("#month").text(monthName[month]);
 createcalendar(currentDate.getMonth(), currentDate.getFullYear());
 let dates = [];
@@ -90,29 +116,28 @@ $("#calendar").click(function (e) {
       );
       $("#info").addClass("text-danger");
     } else {
-      let datesSelected = $('<p class="col-1"=></p>').text(chooseDate);
+      let datesSelected = $('<p class="col-1 selection fs-4"></p>').text(
+        chooseDate
+      );
       $("#listDatesSelected").append(datesSelected);
       dates.push(chooseDate);
-      console.log(chooseDate);
-      console.log(dates);
     }
   }
 });
 
 $("#valid").click(function () {
-  // Récupérer les données du sessionStorage
-  let userConnect = JSON.parse(sessionStorage.getItem("userConnect"));
-  // Récupération des données dans users
-  let users = JSON.parse(sessionStorage.getItem("users"));
+  $(".selection").text("");
   // Vérifier si les données existent
   if (users && Array.isArray(users)) {
-    // Trouver l'utilisateur
-    let connectUser = users.find((user) => user.nom === userConnect.nom);
     if (connectUser) {
+      let newDate = dates.concat(connectUser.date);
+      let sortDate = [...new Set(newDate)];
+      console.log(sortDate);
       // Ajout des dates
-      connectUser.date = dates;
+      connectUser.date = sortDate;
       // Réenregistrer les données dans le sessionStorage
       sessionStorage.setItem("users", JSON.stringify(users));
+      document.location.href = "./students.html";
     } else {
       console.log("Utilisateur non trouvé.");
     }
