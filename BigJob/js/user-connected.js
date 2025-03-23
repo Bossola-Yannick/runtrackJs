@@ -7,7 +7,7 @@ $("#profil").click(function () {
   let user = JSON.parse(sessionStorage.getItem("userConnect"));
   if (user.role === "student") {
     $("#profil").attr({ href: "./pages/students.html" });
-  } else if (user.role === "admin") {
+  } else if (user.role === "admin" || user.role === "super-admin") {
     $("#profil").attr({ href: "./pages/admin.html" });
   } else $("#profil").attr({ href: "./pages/404.html" });
 });

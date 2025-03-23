@@ -31,7 +31,7 @@ $("#connexion").submit(function (e) {
         $("#connexionMessage")
           .text(`Connexion réussie ! Bienvenue ${user.prenom}`)
           .css("color", "green");
-        if (role == "admin") {
+        if (role == "admin" || role === "super-admin") {
           document.location.href = "./admin.html";
           console.log(role);
         } else if (role == "student") {

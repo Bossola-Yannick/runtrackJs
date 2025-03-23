@@ -22,6 +22,9 @@ const dayName = [
   "Dimanche",
 ];
 let userConnect = JSON.parse(sessionStorage.getItem("userConnect"));
+if (!userConnect) {
+  document.location.href = "./404.html";
+}
 $("#name").text(userConnect.nom);
 function getDaysInMonth(month, year) {
   return new Date(year, month, 0).getDate();

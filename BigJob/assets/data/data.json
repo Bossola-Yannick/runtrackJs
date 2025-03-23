@@ -1,8 +1,16 @@
   [
     {
-      "nom": "Prof",
-      "prenom": "William",
-      "email": "william@example.com",
+      "nom": "Dark",
+      "prenom": "Vador",
+      "email": "vador@example.com",
+      "code_postal": "13666",
+      "mot_de_passe": "Aze*1",
+      "role": "super-admin"
+    },
+    {
+      "nom": "Skywalker",
+      "prenom": "Luke",
+      "email": "skywalker@example.com",
       "code_postal": "13700",
       "mot_de_passe": "Aze*1",
       "role": "admin"
@@ -10,15 +18,15 @@
     {
       "nom": "Bossola",
       "prenom": "Yannick",
-      "email": "yannick@example.com",
+      "email": "bossola@example.com",
       "code_postal": "13008",
       "mot_de_passe": "Aze*1",
       "role": "student"
     },
     {
-      "nom": "Sanchez",
-      "prenom": "James",
-      "email": "james@example.com",
+      "nom": "Prince",
+      "prenom": "Végéta",
+      "email": "prince@example.com",
       "code_postal": "13015",
       "mot_de_passe": "Aze*1",
       "role": "student"
